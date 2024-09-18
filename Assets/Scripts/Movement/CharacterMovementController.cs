@@ -14,11 +14,11 @@ namespace SampleRPG.Movement
         public Vector3 MovementDirection { get; set; }
         public Vector3 LookDirection { get; set; }
 
-        private CharacterController _characterController;
+        public CharacterController CharacterController { get; private set; }
 
         protected void Awake()
         {
-            _characterController = GetComponent<CharacterController>();
+            CharacterController = GetComponent<CharacterController>();
         }
         protected void Update()
         {
@@ -33,7 +33,7 @@ namespace SampleRPG.Movement
         {
             var delta = MovementDirection * _speed * Time.deltaTime;
 
-            _characterController.Move(delta);
+            CharacterController.Move(delta);
         }
 
         private void Rotate()

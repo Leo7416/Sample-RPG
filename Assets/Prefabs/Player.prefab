@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -5047903112295774126}
   - component: {fileID: 7248122264691702024}
   - component: {fileID: 5511274947855708717}
+  - component: {fileID: 7253264525155595203}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -140,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd3ef637cb7c2514a8720d20a7b39c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
+  _speed: 7
   _maxRadiansDelta: 10
 --- !u!114 &7248122264691702024
 MonoBehaviour:
@@ -170,6 +171,20 @@ MonoBehaviour:
   _health: 100
   _hand: {fileID: 4860458973763435019}
   _weaponPrefab: {fileID: 4149348442255075076, guid: d1500565509b91649a678550567893f7, type: 3}
+--- !u!114 &7253264525155595203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390164326011856352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a59398054fd5f124386ee41ec3119fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dashSpeed: 10
+  _dashTime: 0.2
 --- !u!1 &5125244445922358987
 GameObject:
   m_ObjectHideFlags: 0
