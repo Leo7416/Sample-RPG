@@ -1,5 +1,5 @@
 using SampleRPG.Movement;
-using SampleRPG.Weapon;
+using SampleRPG.Pickup;
 using UnityEngine;
 
 namespace SampleRPG
@@ -15,6 +15,8 @@ namespace SampleRPG
         private IMovementDirectionSource _movementDirectionSource;
 
         private CharacterMovementController _characterMovementController;
+
+        private int _coinCount = 0;
 
         protected virtual void Awake()
         {
@@ -34,6 +36,22 @@ namespace SampleRPG
             _characterMovementController.LookDirection = lookDirection;
         }
 
+        protected void OnTriggerEnter(Collider other)
+        {
+            var pickupItem = other.gameObject.GetComponent<PickupItem>();
+            if (pickupItem != null)
+            {
+                pickupItem.Pickup(this);
+                Destroy(other.gameObject);
+            }
+        }
+
         protected abstract void EquipWeapon();
+
+        public void AddCoins(int amount)
+        {
+            _coinCount += amount;
+            Debug.Log("Coins: " + _coinCount);
+        }
     }
 }
