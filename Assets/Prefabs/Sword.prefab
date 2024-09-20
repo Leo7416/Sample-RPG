@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <AttackRange>k__BackingField: 0.5
   <AttackDamage>k__BackingField: 40
-  <AttackRate>k__BackingField: 2
+  <AttackRate>k__BackingField: 1
 --- !u!1 &6072167343891704496
 GameObject:
   m_ObjectHideFlags: 0

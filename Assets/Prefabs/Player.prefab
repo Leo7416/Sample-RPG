@@ -183,8 +183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59398054fd5f124386ee41ec3119fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dashSpeed: 10
+  _dashSpeed: 12
   _dashTime: 0.2
+  _dashCooldown: 1
 --- !u!1 &5125244445922358987
 GameObject:
   m_ObjectHideFlags: 0

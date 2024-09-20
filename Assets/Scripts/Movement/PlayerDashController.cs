@@ -11,7 +11,12 @@ namespace SampleRPG.Movement
         [SerializeField]
         private float _dashTime;
 
+        [SerializeField]
+        private float _dashCooldown;
+
         private CharacterMovementController _moveController;
+
+        private bool _canDash = true;
 
         protected void Start()
         {
@@ -20,7 +25,7 @@ namespace SampleRPG.Movement
 
         protected void Update()
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.LeftShift) && _canDash)
             {
                 StartCoroutine(Dash());
             }
@@ -28,6 +33,7 @@ namespace SampleRPG.Movement
 
         IEnumerator Dash()
         {
+            _canDash = false;
             float startTime = Time.time;
 
             while(Time.time < startTime + _dashTime)
@@ -36,6 +42,9 @@ namespace SampleRPG.Movement
 
                 yield return null;
             }
+
+            yield return new WaitForSeconds(_dashCooldown);
+            _canDash = true;
         }
     }
 }

@@ -36,7 +36,7 @@ namespace SampleRPG.Scripts
 
             if (Input.GetButtonDown("Fire1"))
             {
-                _meleeAttackController.Attack();
+                _meleeAttackController.IsAttack = true;
             }
         }
     }

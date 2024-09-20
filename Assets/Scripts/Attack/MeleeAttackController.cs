@@ -4,12 +4,29 @@ using UnityEngine;
 
 namespace SampleRPG.Attack
 {
-    public class MeleeAttackController : MonoBehaviour
+    public class MeleeAttackController : MonoBehaviour, IAttackSource
     {
         [SerializeField]
         private Transform attackPoint;
 
         private MeleeWeapon _meleeWeapon;
+
+        private float _nextAttackTime = 0f;
+
+        public bool IsAttack { get; set; }
+
+        protected void Update()
+        {
+            if (IsAttack) 
+            {
+                if (Time.time >= _nextAttackTime)
+                {
+                    Attack();
+                    _nextAttackTime = Time.time + 1f / _meleeWeapon.AttackRate;
+                    IsAttack = false;
+                }
+            }
+        }
 
         public void Attack()
         {

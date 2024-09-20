@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 860e43e002a3afe4883a22a7542ae3f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinPrefab: {fileID: 0}
+  _coinPrefab: {fileID: -8706289643575134280, guid: 8ed9c63132aead94aa9e46687f01bd36, type: 3}
 --- !u!65 &426630798916942473
 BoxCollider:
   m_ObjectHideFlags: 0

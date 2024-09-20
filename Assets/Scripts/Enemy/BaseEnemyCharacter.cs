@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿using SampleRPG.Pickup;
+using UnityEngine;
 
 namespace SampleRPG.Enemy
 {
     public class BaseEnemyCharacter : MonoBehaviour
     {
+        [SerializeField]
+        private PickupCoin _coinPrefab;
+
         [SerializeField]
         private float _health = 100;
 
@@ -29,6 +33,10 @@ namespace SampleRPG.Enemy
         void Die()
         {
             Destroy(gameObject);
+            if (_coinPrefab != null)
+            {
+                Instantiate(_coinPrefab, transform.position, Quaternion.identity);
+            }
         }
     }
 }
